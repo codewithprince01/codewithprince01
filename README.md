@@ -8,23 +8,25 @@
 ![Stars](https://img.shields.io/github/stars/codewithprince01?style=social)
 
 ## 🚀 About Me
-I'm a **Senior Software Developer** with over 6+ years of hands-on experience in building robust, and high-performance web applications. My passion for coding and dedication to continuous learning drive my approach to web development, allowing me to deliver innovative solutions that meet diverse client needs.
+I'm a **Software Developer** with over 1.5+ years of hands-on experience in building robust, and high-performance web applications. My passion for coding and dedication to continuous learning drive my approach to web development, allowing me to deliver innovative solutions that meet diverse client needs.
 
-- 💼 **Profession**: Senior Laravel Developer
+- 💼 **Profession**: Mern Stack Developer
 - 🌍 **Specialization**: 
-  - Microservices Architecture
-  - Load Balancing
-  - Caching Strategies
-  - Database Optimization
-  - Asynchronous Processing
-  -
- API Development
-  - Cloud Infrastructure
-  - Monitoring and Logging
-  - Security Best Practices
-  - Continuous Integration/Continuous Deployment (CI/CD)
-- 🎯 **Experience**: 6+ years
-
+ - State Management (Redux, Context API)
+ - Performance Optimization & Caching Strategies
+ - Database Design & Query Optimization
+ - Asynchronous Processing & Event Handling
+ - Security Best Practices (XSS, CSRF, SQL Injection Prevention)
+ - Continuous Integration / Continuous Deployment (CI/CD)
+  
+API Development
+ - RESTful API Design & Implementation
+ - GraphQL API Development
+ - Authentication & Authorization (JWT, OAuth)
+ - Error Handling & Logging in APIs
+ - API Performance Optimization
+ - Integration with Frontend (React/Redux)
+ - Third-party API Integration
 
 ## Key Skills
 
