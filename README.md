@@ -8,7 +8,7 @@
 ![Stars](https://img.shields.io/github/stars/codewithprince01?style=social)
 
 ## 🚀 About Me
-I'm a **Software Developer** with over 1.5+ years of hands-on experience in building robust, and high-performance web applications. My passion for coding and dedication to continuous learning drive my approach to web development, allowing me to deliver innovative solutions that meet diverse client needs.
+I'm a **Software Developer** with over 2 years of hands-on experience in building robust, and high-performance web applications. My passion for coding and dedication to continuous learning drive my approach to web development, allowing me to deliver innovative solutions that meet diverse client needs.
 
 - 💼 **Profession**: Mern Stack Developer
 - 🌍 **Specialization**: 
