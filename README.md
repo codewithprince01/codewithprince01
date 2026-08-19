@@ -7,7 +7,7 @@
 </a>
 
 <p>
-  <img src="https://komarev.com/ghpvc/?username=harshitsaini01&label=Profile%20Views&color=667eea&style=for-the-badge" alt="Profile Views" />
+  <img src="https://komarev.com/ghpvc/?username=codewithprince01&label=Profile%20Views&color=667eea&style=for-the-badge" alt="Profile Views" />
   <a href="https://github.com/codewithprince01?tab=followers">
     <img src="https://img.shields.io/github/followers/codewithprince01?label=Followers&style=for-the-badge&color=764ba2" alt="GitHub Followers" />
   </a>
