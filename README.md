@@ -1,12 +1,32 @@
-> 🚨 I’m looking for a **Full Stack Developer** opportunity.
+<img src="https://capsule-render.vercel.app/api?type=waving&height=200&text=Prince%20Saini&fontAlign=50&fontAlignY=40&color=0:fe428e,100:a9fef7&fontColor=141321&fontSize=45&animation=fadeIn" width="100%" />
 
+<div align="center">
 
-# Hi there, I'm Prince Saini 👋
+<a href="https://github.com/codewithprince01">
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1000&color=667EEA&center=true&vCenter=true&width=760&lines=Full-Stack+Developer;200%2B+Websites+Delivered;Cloud+%7C+DevOps+%7C+System+Design;Building+Reliable+Production+Applications" alt="Typing SVG" />
+</a>
 
-![Profile views](https://komarev.com/ghpvc/?username=codewithprince01&color=blue)
-![GitHub followers](https://img.shields.io/github/followers/codewithprince01?label=Followers&style=social)
-![Stars](https://img.shields.io/github/stars/codewithprince01?style=social)
+<p>
+  <img src="https://komarev.com/ghpvc/?username=harshitsaini01&label=Profile%20Views&color=667eea&style=for-the-badge" alt="Profile Views" />
+  <a href="https://github.com/codewithprince01?tab=followers">
+    <img src="https://img.shields.io/github/followers/codewithprince01?label=Followers&style=for-the-badge&color=764ba2" alt="GitHub Followers" />
+  </a>
+  <img src="https://img.shields.io/github/stars/codewithprince01?label=Stars&style=for-the-badge&color=667eea" alt="GitHub Stars" />
+</p>
 
+<p>
+  <a href="https://www.linkedin.com/in/codewithprince0/">
+    <img src="https://img.shields.io/badge/LinkedIn-codewithprince0-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
+  </a>
+  <a href="https://x.com/priiiinnncce">
+    <img src="https://img.shields.io/badge/Twitter-@priiiinnncce-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white" alt="Twitter" />
+  </a>
+  <a href="mailto:codewithprince0@gmail.com">
+    <img src="https://img.shields.io/badge/Email-Let%27s%20Connect-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
+  </a>
+</p>
+
+</div>
 ## 🚀 About Me
 I'm a **Software Developer** with over 2 years of hands-on experience in building robust, and high-performance web applications. My passion for coding and dedication to continuous learning drive my approach to web development, allowing me to deliver innovative solutions that meet diverse client needs.
 
