@@ -10,10 +10,6 @@
 
 <p>
   <img src="https://komarev.com/ghpvc/?username=codewithprince01&label=Profile%20Views&color=0070f3&style=for-the-badge" alt="Profile Views" />
-  <a href="https://github.com/codewithprince01?tab=followers">
-    <img src="https://img.shields.io/github/followers/codewithprince01?label=Followers&style=for-the-badge&color=7928ca" alt="GitHub Followers" />
-  </a>
-  <img src="https://img.shields.io/github/stars/codewithprince01?label=Stars&style=for-the-badge&color=00dfd8" alt="GitHub Stars" />
 </p>
 
 <p>
@@ -24,10 +20,7 @@
     <img src="https://img.shields.io/badge/Twitter-@priiiinnncce-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white" alt="Twitter" />
   </a>
   <a href="mailto:codewithprince0@gmail.com">
-    <img src="https://img.shields.io/badge/Email-Let%27s%20Connect-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
-  </a>
-  <a href="https://codewith-prince.vercel.app/">
-    <img src="https://img.shields.io/badge/Portfolio-Visit%20Site-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Portfolio" />
+    <img src="https://img.shields.io/badge/Email-codewithprince0%40gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
   </a>
 </p>
 
@@ -247,9 +240,6 @@ I build, deploy, and scale modern applications across the full software lifecycl
   </a>
   <a href="https://github.com/codewithprince01">
     <img src="https://img.shields.io/badge/GitHub-codewithprince01-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
-  </a>
-  <a href="https://codewith-prince.vercel.app/">
-    <img src="https://img.shields.io/badge/Portfolio-Visit%20Site-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Portfolio" />
   </a>
 </p>
 
