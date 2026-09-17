@@ -17,18 +17,27 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
       - name: Generate snake animation
         uses: Platane/snk@v3
         with:
           github_user_name: ${{ github.repository_owner }}
           outputs: |
-            output/github-contribution-grid-snake.svg
-            output/github-contribution-grid-snake-dark.svg?palette=github-dark
+            output/github-contribution-grid-snake.svg?color_snake=#0070F3&color_dots=#ebedf0,#9be9a8,#40c463,#30a14e,#216e39
+            output/github-contribution-grid-snake-dark.svg?color_snake=#00DFD8&color_dots=#161b22,#0e3a34,#126359,#16a390,#00DFD8
+
+      - name: Enhance Snake Aesthetics
+        run: node scripts/beautify-snake.mjs
 
       - name: Push generated files
         run: |
           git config --global user.name 'codewithprince01'
           git config --global user.email 'codewithprince0@gmail.com'
+          git pull --rebase --autostash
           git add output/
           git commit -m 'chore: update snake contribution graph' || echo "No changes to commit"
           git push
