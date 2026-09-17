@@ -17,7 +17,7 @@
 </p>
 
 <p>
-  <a href="https://linkedin.com/in/codewithprince0/">
+  <a href="https://www.linkedin.com/in/codewithprince0/" target="_blank">
     <img src="https://img.shields.io/badge/LinkedIn-codewithprince0-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
   </a>
   <a href="https://x.com/priiiinnncce">
@@ -220,7 +220,7 @@ I build, deploy, and scale modern applications across the full software lifecycl
 ## Connect With Me
 
 <p align="center">
-  <a href="https://linkedin.com/in/codewithprince0/">
+  <a href="https://www.linkedin.com/in/codewithprince0/" target="_blank">
     <img src="https://img.shields.io/badge/LinkedIn-codewithprince0-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
   </a>
   <a href="https://x.com/priiiinnncce">
