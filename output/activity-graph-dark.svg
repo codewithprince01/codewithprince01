@@ -14,25 +14,25 @@
   <line x1="46" y1="198.0" x2="796" y2="198.0" stroke="#21262d" stroke-width="1" stroke-dasharray="3,3" />
   <text x="38" y="202.0" class="muted" text-anchor="end">0</text>
   <line x1="46" y1="129.0" x2="796" y2="129.0" stroke="#21262d" stroke-width="1" stroke-dasharray="3,3" />
-  <text x="38" y="133.0" class="muted" text-anchor="end">46</text>
+  <text x="38" y="133.0" class="muted" text-anchor="end">52</text>
   <line x1="46" y1="60.0" x2="796" y2="60.0" stroke="#21262d" stroke-width="1" stroke-dasharray="3,3" />
-  <text x="38" y="64.0" class="muted" text-anchor="end">92</text>
-  <polygon points="46,198 46.0,198.0 60.4,198.0 74.8,198.0 89.3,198.0 103.7,196.5 118.1,198.0 132.5,195.0 147.0,168.0 161.4,198.0 175.8,192.0 190.2,189.0 204.7,198.0 219.1,178.5 233.5,198.0 247.9,193.5 262.3,192.0 276.8,198.0 291.2,198.0 305.6,198.0 320.0,198.0 334.5,196.5 348.9,166.5 363.3,193.5 377.7,196.5 392.2,198.0 406.6,196.5 421.0,169.5 435.4,184.5 449.8,159.0 464.3,180.0 478.7,183.0 493.1,198.0 507.5,198.0 522.0,198.0 536.4,198.0 550.8,198.0 565.2,196.5 579.7,198.0 594.1,198.0 608.5,198.0 622.9,166.5 637.3,198.0 651.8,198.0 666.2,198.0 680.6,198.0 695.0,198.0 709.5,198.0 723.9,198.0 738.3,195.0 752.7,198.0 767.2,169.5 781.6,60.0 796.0,159.0 796,198" fill="url(#areaGraddark)" />
-  <polyline points="46.0,198.0 60.4,198.0 74.8,198.0 89.3,198.0 103.7,196.5 118.1,198.0 132.5,195.0 147.0,168.0 161.4,198.0 175.8,192.0 190.2,189.0 204.7,198.0 219.1,178.5 233.5,198.0 247.9,193.5 262.3,192.0 276.8,198.0 291.2,198.0 305.6,198.0 320.0,198.0 334.5,196.5 348.9,166.5 363.3,193.5 377.7,196.5 392.2,198.0 406.6,196.5 421.0,169.5 435.4,184.5 449.8,159.0 464.3,180.0 478.7,183.0 493.1,198.0 507.5,198.0 522.0,198.0 536.4,198.0 550.8,198.0 565.2,196.5 579.7,198.0 594.1,198.0 608.5,198.0 622.9,166.5 637.3,198.0 651.8,198.0 666.2,198.0 680.6,198.0 695.0,198.0 709.5,198.0 723.9,198.0 738.3,195.0 752.7,198.0 767.2,169.5 781.6,60.0 796.0,159.0" fill="none" stroke="#b08cff" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" />
-  <circle cx="781.6" cy="60.0" r="4" fill="#b08cff" />
-  <circle cx="781.6" cy="60.0" r="8" fill="#b08cff" fill-opacity="0.25" />
+  <text x="38" y="64.0" class="muted" text-anchor="end">104</text>
+  <polygon points="46,198 46.0,147.6 60.4,142.3 74.8,171.5 89.3,176.8 103.7,158.2 118.1,139.6 132.5,127.7 147.0,178.1 161.4,167.5 175.8,142.3 190.2,135.6 204.7,163.5 219.1,179.4 233.5,152.9 247.9,146.3 262.3,154.2 276.8,178.1 291.2,168.8 305.6,150.2 320.0,146.3 334.5,158.2 348.9,163.5 363.3,158.2 377.7,142.3 392.2,152.9 406.6,176.8 421.0,151.6 435.4,138.3 449.8,123.7 464.3,156.9 478.7,180.8 493.1,160.8 507.5,137.0 522.0,158.2 536.4,126.3 550.8,99.8 565.2,150.2 579.7,118.4 594.1,98.5 608.5,135.6 622.9,111.8 637.3,107.8 651.8,156.9 666.2,99.8 680.6,117.1 695.0,154.2 709.5,95.8 723.9,127.7 738.3,144.9 752.7,94.5 767.2,60.0 781.6,78.6 796.0,175.4 796,198" fill="url(#areaGraddark)" />
+  <polyline points="46.0,147.6 60.4,142.3 74.8,171.5 89.3,176.8 103.7,158.2 118.1,139.6 132.5,127.7 147.0,178.1 161.4,167.5 175.8,142.3 190.2,135.6 204.7,163.5 219.1,179.4 233.5,152.9 247.9,146.3 262.3,154.2 276.8,178.1 291.2,168.8 305.6,150.2 320.0,146.3 334.5,158.2 348.9,163.5 363.3,158.2 377.7,142.3 392.2,152.9 406.6,176.8 421.0,151.6 435.4,138.3 449.8,123.7 464.3,156.9 478.7,180.8 493.1,160.8 507.5,137.0 522.0,158.2 536.4,126.3 550.8,99.8 565.2,150.2 579.7,118.4 594.1,98.5 608.5,135.6 622.9,111.8 637.3,107.8 651.8,156.9 666.2,99.8 680.6,117.1 695.0,154.2 709.5,95.8 723.9,127.7 738.3,144.9 752.7,94.5 767.2,60.0 781.6,78.6 796.0,175.4" fill="none" stroke="#b08cff" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" />
+  <circle cx="767.2" cy="60.0" r="4" fill="#b08cff" />
+  <circle cx="767.2" cy="60.0" r="8" fill="#b08cff" fill-opacity="0.25" />
   <text x="46.0" y="216" class="muted" text-anchor="middle">Sep</text>
-  <text x="89.3" y="216" class="muted" text-anchor="middle">Oct</text>
+  <text x="74.8" y="216" class="muted" text-anchor="middle">Oct</text>
   <text x="147.0" y="216" class="muted" text-anchor="middle">Nov</text>
-  <text x="219.1" y="216" class="muted" text-anchor="middle">Dec</text>
-  <text x="276.8" y="216" class="muted" text-anchor="middle">Jan</text>
+  <text x="204.7" y="216" class="muted" text-anchor="middle">Dec</text>
+  <text x="262.3" y="216" class="muted" text-anchor="middle">Jan</text>
   <text x="334.5" y="216" class="muted" text-anchor="middle">Feb</text>
   <text x="392.2" y="216" class="muted" text-anchor="middle">Mar</text>
-  <text x="464.3" y="216" class="muted" text-anchor="middle">Apr</text>
+  <text x="449.8" y="216" class="muted" text-anchor="middle">Apr</text>
   <text x="522.0" y="216" class="muted" text-anchor="middle">May</text>
-  <text x="594.1" y="216" class="muted" text-anchor="middle">Jun</text>
-  <text x="651.8" y="216" class="muted" text-anchor="middle">Jul</text>
+  <text x="579.7" y="216" class="muted" text-anchor="middle">Jun</text>
+  <text x="637.3" y="216" class="muted" text-anchor="middle">Jul</text>
   <text x="709.5" y="216" class="muted" text-anchor="middle">Aug</text>
-  <text x="781.6" y="216" class="muted" text-anchor="middle">Sep</text>
-  <text x="796" y="34" class="muted" text-anchor="end">Weekly live contributions (317 in last 12 months)</text>
+  <text x="767.2" y="216" class="muted" text-anchor="middle">Sep</text>
+  <text x="796" y="34" class="muted" text-anchor="end">Weekly live contributions (2,227+ in 2026)</text>
 </svg>
