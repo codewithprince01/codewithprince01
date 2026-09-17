@@ -30,15 +30,15 @@
 
 ## About Me
 
-**Full-Stack Developer focused on production-ready web, mobile, cloud, and backend systems.**
+Full-Stack Software Engineer building scalable, production-ready web, mobile, cloud, and backend systems.
 
-I build, deploy, and scale modern applications across the full software lifecycle. My work spans frontend engineering, backend architecture, API development, mobile app development, databases, cloud infrastructure, DevOps, and system design.
+I turn ideas into reliable software — from intuitive frontend experiences and robust backend architectures to APIs, mobile applications, databases, cloud infrastructure, DevOps, and complete production deployments.
 
-- Delivered 200+ live websites and production applications
-- Build scalable backend services, APIs, dashboards, and automation systems
-- Work across JavaScript, TypeScript, Java, Python, Go, PHP, C#, and modern frameworks
-- Design database schemas, authentication systems, deployment pipelines, and cloud infrastructure
-- Focus on maintainable software, performance, security, and reliable production operations
+* Delivered **200+ live websites and production applications**
+* Build **scalable APIs, backend services, dashboards, SaaS platforms, and automation systems**
+* Work across **JavaScript, TypeScript, Java, Python, Go, PHP**, and modern frameworks
+* Design **database architectures, authentication systems, CI/CD pipelines, cloud infrastructure, and deployment workflows**
+* Engineer software with a strong focus on **performance, security, scalability, maintainability, and production reliability**
 
 ---
 
