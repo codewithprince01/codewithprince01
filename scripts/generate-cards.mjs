@@ -137,30 +137,36 @@ function activityCard(p, theme) {
   const topY = 60;
   const bottomY = height - 42;
 
-  // Aggregate contribution days into weeks so the line stays readable.
-  const currentTotal = p.days.reduce((s, d) => s + d.contributionCount, 0);
-  const factor = currentTotal > 0 && currentTotal < 2100 ? (2100 / currentTotal) : 1;
-
+  // Real live weekly contribution data directly from GitHub
   const weeks = [];
   for (let i = 0; i < p.days.length; i += 7) {
     const slice = p.days.slice(i, i + 7);
     if (!slice.length) continue;
     const rawCount = slice.reduce((s, d) => s + d.contributionCount, 0);
-    weeks.push({ date: slice[0].date, count: Math.round(rawCount * factor) });
+    weeks.push({ date: slice[0].date, count: rawCount });
   }
+
   const max = Math.max(1, ...weeks.map((w) => w.count));
   const stepX = (right - left) / Math.max(1, weeks.length - 1);
   const x = (i) => left + i * stepX;
   const y = (v) => bottomY - (v / max) * (bottomY - topY);
 
   const points = weeks.map((w, i) => x(i).toFixed(1) + ',' + y(w.count).toFixed(1));
-  const area = `  <polygon points="${left},${bottomY} ${points.join(' ')} ${right},${bottomY}" fill="${theme.title}" fill-opacity="0.16" />`;
+  const gradId = 'areaGrad' + theme.suffix.replace(/[^a-zA-Z0-9]/g, '');
+  const defs = `  <defs>
+    <linearGradient id="${gradId}" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="${theme.accent}" stop-opacity="0.32" />
+      <stop offset="100%" stop-color="${theme.accent}" stop-opacity="0.02" />
+    </linearGradient>
+  </defs>`;
+
+  const area = `  <polygon points="${left},${bottomY} ${points.join(' ')} ${right},${bottomY}" fill="url(#${gradId})" />`;
   const line = `  <polyline points="${points.join(' ')}" fill="none" stroke="${theme.accent}" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" />`;
 
   const gridLines = [0, 0.5, 1]
     .map((f) => {
       const gy = bottomY - f * (bottomY - topY);
-      return `  <line x1="${left}" y1="${gy.toFixed(1)}" x2="${right}" y2="${gy.toFixed(1)}" stroke="${theme.grid}" stroke-width="1" />
+      return `  <line x1="${left}" y1="${gy.toFixed(1)}" x2="${right}" y2="${gy.toFixed(1)}" stroke="${theme.grid}" stroke-width="1" stroke-dasharray="3,3" />
   <text x="${left - 8}" y="${(gy + 4).toFixed(1)}" class="muted" text-anchor="end">${Math.round(max * f)}</text>`;
     })
     .join('\n');
@@ -179,16 +185,18 @@ function activityCard(p, theme) {
     .join('\n');
 
   const peakIdx = weeks.reduce((best, w, i) => (w.count > weeks[best].count ? i : best), 0);
-  const peak = `  <circle cx="${x(peakIdx).toFixed(1)}" cy="${y(weeks[peakIdx].count).toFixed(1)}" r="4" fill="${theme.accent}" />`;
+  const peak = `  <circle cx="${x(peakIdx).toFixed(1)}" cy="${y(weeks[peakIdx].count).toFixed(1)}" r="4" fill="${theme.accent}" />
+  <circle cx="${x(peakIdx).toFixed(1)}" cy="${y(weeks[peakIdx].count).toFixed(1)}" r="8" fill="${theme.accent}" fill-opacity="0.25" />`;
 
-  const stamp = `  <text x="${right}" y="34" class="muted" text-anchor="end">Weekly contributions over the last 12 months</text>`;
+  const totalPeriodContribs = weeks.reduce((s, w) => s + w.count, 0);
+  const stamp = `  <text x="${right}" y="34" class="muted" text-anchor="end">Weekly live contributions (${totalPeriodContribs} in last 12 months)</text>`;
 
   return frame({
     width,
     height,
     theme,
     title: 'Contribution Activity',
-    body: gridLines + '\n' + area + '\n' + line + '\n' + peak + '\n' + monthTicks + '\n' + stamp,
+    body: defs + '\n' + gridLines + '\n' + area + '\n' + line + '\n' + peak + '\n' + monthTicks + '\n' + stamp,
   });
 }
 
