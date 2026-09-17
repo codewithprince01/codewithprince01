@@ -36,13 +36,15 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PROFILE_TOKEN: ${{ secrets.PROFILE_TOKEN }}
           GH_USER: ${{ github.repository_owner }}
-        run: node scripts/generate-cards.mjs
+        run: |
+          node scripts/generate-cards.mjs
+          node scripts/update-3d-contrib.mjs
 
       - name: Push generated files
         run: |
           git config --global user.name 'codewithprince01'
           git config --global user.email 'codewithprince0@gmail.com'
           git pull --rebase --autostash
-          git add output/
+          git add output/ profile-3d-contrib/
           git commit -m 'chore: refresh profile stat cards' || echo "No changes to commit"
           git push

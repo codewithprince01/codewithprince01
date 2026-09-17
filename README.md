@@ -228,7 +228,7 @@ I build, deploy, and scale modern applications across the full software lifecycl
 ## 3D Contribution Graph
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/codewithprince01/codewithprince01/main/profile-3d-contrib/profile-night-rainbow.svg" alt="3D Contribution Graph" width="100%" />
+  <img src="https://raw.githubusercontent.com/codewithprince01/codewithprince01/main/profile-3d-contrib/profile-night-rainbow.svg?v=2026.2" alt="3D Contribution Graph" width="100%" />
 </p>
 
 ---
