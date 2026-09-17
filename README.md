@@ -44,30 +44,35 @@ I turn ideas into reliable software — from intuitive frontend experiences and 
 
 ## Featured Focus
 
-> I like building practical software that moves from idea to production: clean interfaces, durable APIs, reliable infrastructure, and systems that can be maintained after launch.
+> I build software that moves from **idea to production** — combining polished user experiences, scalable backend systems, reliable infrastructure, and engineering practices designed for long-term maintainability.
 
-<table>
-  <tr>
-    <td width="50%">
-      <h3>Full-Stack Products</h3>
-      <p>Web apps, admin panels, SaaS dashboards, landing pages, e-commerce systems, and business tools.</p>
-    </td>
-    <td width="50%">
-      <h3>Backend Systems</h3>
-      <p>REST APIs, GraphQL APIs, authentication, microservices, queues, caching, and database architecture.</p>
-    </td>
-  </tr>
-  <tr>
-    <td width="50%">
-      <h3>Cloud & DevOps</h3>
-      <p>Docker, Kubernetes, CI/CD, Linux servers, Nginx, AWS, GCP, Terraform, Ansible, and monitoring.</p>
-    </td>
-    <td width="50%">
-      <h3>Mobile & Apps</h3>
-      <p>Flutter, Dart, Kotlin, Swift, Android Studio, Gradle, and cross-platform application delivery.</p>
-    </td>
-  </tr>
-</table>
+|   |
+| - |
+
+### Full-Stack Products
+
+Web applications, SaaS platforms, admin panels, dashboards, e-commerce systems, landing pages, and business-focused products built for real-world use.
+
+|   |
+| - |
+
+### Backend & System Architecture
+
+REST & GraphQL APIs, authentication & authorization, microservices, background jobs, queues, caching, database design, and scalable backend services.
+
+|   |
+| - |
+
+### Cloud & DevOps
+
+Docker, Kubernetes, CI/CD, Linux servers, Nginx, AWS, GCP, Terraform, Ansible, monitoring, deployment automation, and production infrastructure.
+
+|   |
+| - |
+
+### Mobile & Application Development
+
+Flutter, Dart, Kotlin, Swift, Android Studio, Gradle, cross-platform applications, native development, and end-to-end app delivery.
 
 ---
 
