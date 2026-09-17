@@ -46,33 +46,28 @@ I turn ideas into reliable software — from intuitive frontend experiences and 
 
 > I build software that moves from **idea to production** — combining polished user experiences, scalable backend systems, reliable infrastructure, and engineering practices designed for long-term maintainability.
 
-|   |
-| - |
-
-### Full-Stack Products
-
-Web applications, SaaS platforms, admin panels, dashboards, e-commerce systems, landing pages, and business-focused products built for real-world use.
-
-|   |
-| - |
-
-### Backend & System Architecture
-
-REST & GraphQL APIs, authentication & authorization, microservices, background jobs, queues, caching, database design, and scalable backend services.
-
-|   |
-| - |
-
-### Cloud & DevOps
-
-Docker, Kubernetes, CI/CD, Linux servers, Nginx, AWS, GCP, Terraform, Ansible, monitoring, deployment automation, and production infrastructure.
-
-|   |
-| - |
-
-### Mobile & Application Development
-
-Flutter, Dart, Kotlin, Swift, Android Studio, Gradle, cross-platform applications, native development, and end-to-end app delivery.
+<table>
+  <tr>
+    <td width="50%">
+      <h3>Full-Stack Products</h3>
+      <p>Web applications, SaaS platforms, admin panels, dashboards, e-commerce systems, landing pages, and business-focused products built for real-world use.</p>
+    </td>
+    <td width="50%">
+      <h3>Backend & System Architecture</h3>
+      <p>REST & GraphQL APIs, authentication & authorization, microservices, background jobs, queues, caching, database design, and scalable backend services.</p>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%">
+      <h3>Cloud & DevOps</h3>
+      <p>Docker, Kubernetes, CI/CD, Linux servers, Nginx, AWS, GCP, Terraform, Ansible, monitoring, deployment automation, and production infrastructure.</p>
+    </td>
+    <td width="50%">
+      <h3>Mobile & Application Development</h3>
+      <p>Flutter, Dart, Kotlin, Swift, Android Studio, Gradle, cross-platform applications, native development, and end-to-end app delivery.</p>
+    </td>
+  </tr>
+</table>
 
 ---
 
