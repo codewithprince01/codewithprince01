@@ -1,0 +1,37 @@
+name: Daily Streak Keeper
+
+on:
+  schedule:
+    # Runs everyday at 00:05 UTC (05:35 AM IST)
+    - cron: "5 0 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-streak
+  cancel-in-progress: true
+
+jobs:
+  commit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Update daily activity log
+        run: |
+          mkdir -p .github
+          echo "Activity timestamp: $(date -u +'%Y-%m-%dT%H:%M:%SZ')" > .github/daily-streak.txt
+
+      - name: Commit and push daily streak
+        run: |
+          git config --global user.name "codewithprince01"
+          git config --global user.email "codewithprince0@gmail.com"
+          git pull --rebase --autostash
+          git add .github/daily-streak.txt
+          git commit -m "chore(streak): daily contribution $(date -u +'%Y-%m-%d')"
+          git push origin main
