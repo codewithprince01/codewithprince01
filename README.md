@@ -191,18 +191,18 @@ I build, deploy, and scale modern applications across the full software lifecycl
 
 <!-- Realtime Weekly Contribution Graph -->
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/codewithprince01/codewithprince01/main/output/activity-graph-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/codewithprince01/codewithprince01/main/output/activity-graph.svg" />
-  <img src="https://raw.githubusercontent.com/codewithprince01/codewithprince01/main/output/activity-graph.svg" alt="Contribution activity" />
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/codewithprince01/codewithprince01/main/output/activity-graph-dark.svg?v=2026.2" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/codewithprince01/codewithprince01/main/output/activity-graph.svg?v=2026.2" />
+  <img src="https://raw.githubusercontent.com/codewithprince01/codewithprince01/main/output/activity-graph.svg?v=2026.2" alt="Contribution activity" />
 </picture>
 
 <br/><br/>
 
 <!-- Realtime Streak Stats (2026 Live) -->
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/codewithprince01/codewithprince01/main/output/streak-stats-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/codewithprince01/codewithprince01/main/output/streak-stats.svg" />
-  <img src="https://raw.githubusercontent.com/codewithprince01/codewithprince01/main/output/streak-stats-dark.svg" alt="Prince's GitHub Streak" />
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/codewithprince01/codewithprince01/main/output/streak-stats-dark.svg?v=2026.2" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/codewithprince01/codewithprince01/main/output/streak-stats.svg?v=2026.2" />
+  <img src="https://raw.githubusercontent.com/codewithprince01/codewithprince01/main/output/streak-stats-dark.svg?v=2026.2" alt="Prince's GitHub Streak" />
 </picture>
 
 <br/><br/>
