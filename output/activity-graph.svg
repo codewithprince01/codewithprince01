@@ -1,0 +1,31 @@
+<svg width="820" height="240" viewBox="0 0 820 240" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Contribution Activity">
+  <style>
+    .card-title { font: 600 17px 'Segoe UI', Ubuntu, 'Helvetica Neue', Sans-Serif; fill: #667eea; }
+    .muted { font: 400 11px 'Segoe UI', Ubuntu, 'Helvetica Neue', Sans-Serif; fill: #6b7280; }
+  </style>
+  <rect x="0.5" y="0.5" width="819" height="239" rx="10" fill="#f8f9fa" stroke="#e3e6ea" />
+  <text x="24" y="34" class="card-title">Contribution Activity</text>
+  <line x1="46" y1="198.0" x2="796" y2="198.0" stroke="#e3e6ea" stroke-width="1" />
+  <text x="38" y="202.0" class="muted" text-anchor="end">0</text>
+  <line x1="46" y1="129.0" x2="796" y2="129.0" stroke="#e3e6ea" stroke-width="1" />
+  <text x="38" y="133.0" class="muted" text-anchor="end">46</text>
+  <line x1="46" y1="60.0" x2="796" y2="60.0" stroke="#e3e6ea" stroke-width="1" />
+  <text x="38" y="64.0" class="muted" text-anchor="end">92</text>
+  <polygon points="46,198 46.0,198.0 60.4,198.0 74.8,198.0 89.3,198.0 103.7,196.5 118.1,198.0 132.5,195.0 147.0,168.0 161.4,198.0 175.8,192.0 190.2,189.0 204.7,198.0 219.1,178.5 233.5,198.0 247.9,193.5 262.3,192.0 276.8,198.0 291.2,198.0 305.6,198.0 320.0,198.0 334.5,196.5 348.9,166.5 363.3,193.5 377.7,196.5 392.2,198.0 406.6,196.5 421.0,169.5 435.4,184.5 449.8,159.0 464.3,180.0 478.7,183.0 493.1,198.0 507.5,198.0 522.0,198.0 536.4,198.0 550.8,198.0 565.2,196.5 579.7,198.0 594.1,198.0 608.5,198.0 622.9,166.5 637.3,198.0 651.8,198.0 666.2,198.0 680.6,198.0 695.0,198.0 709.5,198.0 723.9,198.0 738.3,195.0 752.7,198.0 767.2,169.5 781.6,60.0 796.0,169.5 796,198" fill="#667eea" fill-opacity="0.16" />
+  <polyline points="46.0,198.0 60.4,198.0 74.8,198.0 89.3,198.0 103.7,196.5 118.1,198.0 132.5,195.0 147.0,168.0 161.4,198.0 175.8,192.0 190.2,189.0 204.7,198.0 219.1,178.5 233.5,198.0 247.9,193.5 262.3,192.0 276.8,198.0 291.2,198.0 305.6,198.0 320.0,198.0 334.5,196.5 348.9,166.5 363.3,193.5 377.7,196.5 392.2,198.0 406.6,196.5 421.0,169.5 435.4,184.5 449.8,159.0 464.3,180.0 478.7,183.0 493.1,198.0 507.5,198.0 522.0,198.0 536.4,198.0 550.8,198.0 565.2,196.5 579.7,198.0 594.1,198.0 608.5,198.0 622.9,166.5 637.3,198.0 651.8,198.0 666.2,198.0 680.6,198.0 695.0,198.0 709.5,198.0 723.9,198.0 738.3,195.0 752.7,198.0 767.2,169.5 781.6,60.0 796.0,169.5" fill="none" stroke="#764ba2" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" />
+  <circle cx="781.6" cy="60.0" r="4" fill="#764ba2" />
+  <text x="46.0" y="216" class="muted" text-anchor="middle">Sep</text>
+  <text x="89.3" y="216" class="muted" text-anchor="middle">Oct</text>
+  <text x="147.0" y="216" class="muted" text-anchor="middle">Nov</text>
+  <text x="219.1" y="216" class="muted" text-anchor="middle">Dec</text>
+  <text x="276.8" y="216" class="muted" text-anchor="middle">Jan</text>
+  <text x="334.5" y="216" class="muted" text-anchor="middle">Feb</text>
+  <text x="392.2" y="216" class="muted" text-anchor="middle">Mar</text>
+  <text x="464.3" y="216" class="muted" text-anchor="middle">Apr</text>
+  <text x="522.0" y="216" class="muted" text-anchor="middle">May</text>
+  <text x="594.1" y="216" class="muted" text-anchor="middle">Jun</text>
+  <text x="651.8" y="216" class="muted" text-anchor="middle">Jul</text>
+  <text x="709.5" y="216" class="muted" text-anchor="middle">Aug</text>
+  <text x="781.6" y="216" class="muted" text-anchor="middle">Sep</text>
+  <text x="796" y="34" class="muted" text-anchor="end">Weekly contributions over the last 12 months</text>
+</svg>
