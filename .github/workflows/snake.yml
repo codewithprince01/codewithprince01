@@ -27,8 +27,8 @@ jobs:
         with:
           github_user_name: ${{ github.repository_owner }}
           outputs: |
-            output/github-contribution-grid-snake.svg?color_snake=#0070F3&color_dots=#ebedf0,#9be9a8,#40c463,#30a14e,#216e39
-            output/github-contribution-grid-snake-dark.svg?color_snake=#00DFD8&color_dots=#161b22,#0e3a34,#126359,#16a390,#00DFD8
+            output/github-contribution-grid-snake.svg
+            output/github-contribution-grid-snake-dark.svg?palette=github-dark
 
       - name: Enhance Snake Aesthetics
         run: node scripts/beautify-snake.mjs
