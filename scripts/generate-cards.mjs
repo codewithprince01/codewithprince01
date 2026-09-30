@@ -189,16 +189,15 @@ function activityCard(p, theme) {
   const topY = 60;
   const bottomY = height - 42;
 
-  // Last 52 weeks of real contributions, bucketed so the final bucket ends today
-  const recent = p.days.slice(-364);
-  const weeks = [];
-  for (let i = 0; i < recent.length; i += 7) {
-    const slice = recent.slice(i, i + 7);
-    if (!slice.length) continue;
-    const rawCount = slice.reduce((s, d) => s + d.contributionCount, 0);
-    weeks.push({ date: slice[0].date, count: rawCount });
+  // Every month since the first contribution, so this chart and the streak card share one all-time total
+  const firstMonth = p.stats.firstDate.slice(0, 7);
+  const byMonth = new Map();
+  for (const d of p.days) {
+    const m = d.date.slice(0, 7);
+    if (m < firstMonth) continue;
+    byMonth.set(m, (byMonth.get(m) || 0) + d.contributionCount);
   }
-
+  const weeks = [...byMonth].sort(([a], [b]) => a.localeCompare(b)).map(([m, count]) => ({ date: m + '-01', count }));
   const max = Math.max(1, ...weeks.map((w) => w.count));
   const stepX = (right - left) / Math.max(1, weeks.length - 1);
   const x = (i) => left + i * stepX;
@@ -224,14 +223,13 @@ function activityCard(p, theme) {
     })
     .join('\n');
 
-  const seenMonths = new Set();
+  // Label every few months so the whole history stays readable
+  const every = Math.max(1, Math.ceil(weeks.length / 12));
   const monthTicks = weeks
     .map((w, i) => {
-      const d = new Date(w.date);
-      const key = d.getUTCFullYear() + '-' + d.getUTCMonth();
-      if (seenMonths.has(key)) return null;
-      seenMonths.add(key);
-      const label = d.toLocaleString('en-US', { month: 'short', timeZone: 'UTC' });
+      if (i % every !== 0) return null;
+      const d = new Date(w.date + 'T00:00:00Z');
+      const label = d.toLocaleString('en-US', { month: 'short', timeZone: 'UTC' }) + " '" + String(d.getUTCFullYear()).slice(2);
       return `  <text x="${x(i).toFixed(1)}" y="${bottomY + 18}" class="muted" text-anchor="middle">${label}</text>`;
     })
     .filter(Boolean)
@@ -242,7 +240,8 @@ function activityCard(p, theme) {
   <circle cx="${x(peakIdx).toFixed(1)}" cy="${y(weeks[peakIdx].count).toFixed(1)}" r="8" fill="${theme.accent}" fill-opacity="0.25" />`;
 
   const totalPeriodContribs = weeks.reduce((s, w) => s + w.count, 0);
-  const stamp = `  <text x="${right}" y="34" class="muted" text-anchor="end">Weekly contributions (${totalPeriodContribs.toLocaleString('en-US')} in the last year)</text>`;
+  const since = new Date(p.stats.firstDate + 'T00:00:00Z').toLocaleString('en-US', { month: 'short', year: 'numeric', timeZone: 'UTC' });
+  const stamp = `  <text x="${right}" y="34" class="muted" text-anchor="end">Monthly contributions (${totalPeriodContribs.toLocaleString('en-US')} since ${since})</text>`;
 
   return frame({
     width,
