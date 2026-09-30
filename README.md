@@ -182,11 +182,11 @@ I turn ideas into reliable software — from intuitive frontend experiences and 
 
 <div align="center">
 
-<!-- Realtime Weekly Contribution Graph -->
+<!-- All-time Monthly Contribution Graph -->
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/codewithprince01/codewithprince01/main/output/activity-graph-dark.svg?v=2026.9" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/codewithprince01/codewithprince01/main/output/activity-graph.svg?v=2026.9" />
-  <img src="https://raw.githubusercontent.com/codewithprince01/codewithprince01/main/output/activity-graph.svg?v=2026.9" alt="Contribution activity" />
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/codewithprince01/codewithprince01/main/output/activity-graph-dark.svg?v=2026.10" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/codewithprince01/codewithprince01/main/output/activity-graph.svg?v=2026.10" />
+  <img src="https://raw.githubusercontent.com/codewithprince01/codewithprince01/main/output/activity-graph.svg?v=2026.10" alt="Contribution activity" />
 </picture>
 
 <br/><br/>
@@ -200,7 +200,7 @@ I turn ideas into reliable software — from intuitive frontend experiences and 
 
 <br/><br/>
 
-<sub>Real contribution activity and streak charts automatically updated daily by GitHub Actions.</sub>
+<sub>All-time contributions (public + private) since my first commit, refreshed automatically every 6 hours by GitHub Actions.</sub>
 
 </div>
 
@@ -221,8 +221,10 @@ I turn ideas into reliable software — from intuitive frontend experiences and 
 ## 3D Contribution Graph
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/codewithprince01/codewithprince01/main/profile-3d-contrib/profile-night-rainbow.svg?v=2026.9" alt="3D Contribution Graph" width="100%" />
+  <img src="https://raw.githubusercontent.com/codewithprince01/codewithprince01/main/profile-3d-contrib/profile-night-rainbow.svg?v=2026.10" alt="3D Contribution Graph" width="100%" />
 </p>
+
+<p align="center"><sub>3D view of the last 12 months of contributions. The number next to the star icon is total stars across my repositories.</sub></p>
 
 ---
 
