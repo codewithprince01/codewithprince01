@@ -183,21 +183,25 @@ ${body}
 
 function activityCard(p, theme) {
   const width = 820;
-  const height = 270;
+  const height = 240;
   const left = 46;
   const right = width - 24;
   const topY = 60;
-  const bottomY = height - 70;
+  const bottomY = height - 42;
 
-  // Every month since the first contribution, so this chart and the streak card share one all-time total
-  const firstMonth = p.stats.firstDate.slice(0, 7);
-  const byMonth = new Map();
+  // Last 12 months, one point per month (the current month counts up to today)
+  const now = new Date();
+  const months = [];
+  for (let k = 11; k >= 0; k--) {
+    const d = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth() - k, 1));
+    months.push(d.toISOString().slice(0, 7));
+  }
+  const byMonth = new Map(months.map((m) => [m, 0]));
   for (const d of p.days) {
     const m = d.date.slice(0, 7);
-    if (m < firstMonth) continue;
-    byMonth.set(m, (byMonth.get(m) || 0) + d.contributionCount);
+    if (byMonth.has(m)) byMonth.set(m, byMonth.get(m) + d.contributionCount);
   }
-  const weeks = [...byMonth].sort(([a], [b]) => a.localeCompare(b)).map(([m, count]) => ({ date: m + '-01', count }));
+  const weeks = months.map((m) => ({ date: m + '-01', count: byMonth.get(m) }));
   const max = Math.max(1, ...weeks.map((w) => w.count));
   const stepX = (right - left) / Math.max(1, weeks.length - 1);
   const x = (i) => left + i * stepX;
@@ -223,15 +227,12 @@ function activityCard(p, theme) {
     })
     .join('\n');
 
-  // One label per month, tilted so every month fits without overlapping
+  // One label under every month
   const monthTicks = weeks
     .map((w, i) => {
       const d = new Date(w.date + 'T00:00:00Z');
-      const label = d.toLocaleString('en-US', { month: 'short', timeZone: 'UTC' }) + " '" + String(d.getUTCFullYear()).slice(2);
-      const tx = x(i).toFixed(1);
-      const ty = bottomY + 14;
-      return `  <line x1="${tx}" y1="${bottomY}" x2="${tx}" y2="${bottomY + 4}" stroke="${theme.grid}" stroke-width="1" />
-  <text x="${tx}" y="${ty}" class="muted" font-size="10" text-anchor="end" transform="rotate(-45 ${tx} ${ty})">${label}</text>`;
+      const label = d.toLocaleString('en-US', { month: 'short', timeZone: 'UTC' });
+      return `  <text x="${x(i).toFixed(1)}" y="${bottomY + 18}" class="muted" text-anchor="middle">${label}</text>`;
     })
     .filter(Boolean)
     .join('\n');
@@ -241,8 +242,7 @@ function activityCard(p, theme) {
   <circle cx="${x(peakIdx).toFixed(1)}" cy="${y(weeks[peakIdx].count).toFixed(1)}" r="8" fill="${theme.accent}" fill-opacity="0.25" />`;
 
   const totalPeriodContribs = weeks.reduce((s, w) => s + w.count, 0);
-  const since = new Date(p.stats.firstDate + 'T00:00:00Z').toLocaleString('en-US', { month: 'short', year: 'numeric', timeZone: 'UTC' });
-  const stamp = `  <text x="${right}" y="34" class="muted" text-anchor="end">Monthly contributions (${totalPeriodContribs.toLocaleString('en-US')} since ${since})</text>`;
+  const stamp = `  <text x="${right}" y="34" class="muted" text-anchor="end">Monthly contributions (${totalPeriodContribs.toLocaleString('en-US')} in the last 12 months)</text>`;
 
   return frame({
     width,
