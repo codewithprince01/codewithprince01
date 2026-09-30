@@ -1,9 +1,9 @@
-<svg width="820" height="240" viewBox="0 0 820 240" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Contribution Activity">
+<svg width="820" height="270" viewBox="0 0 820 270" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Contribution Activity">
   <style>
     .card-title { font: 600 17px 'Segoe UI', Ubuntu, 'Helvetica Neue', Sans-Serif; fill: #8ea2ff; }
     .muted { font: 400 11px 'Segoe UI', Ubuntu, 'Helvetica Neue', Sans-Serif; fill: #8b949e; }
   </style>
-  <rect x="0.5" y="0.5" width="819" height="239" rx="10" fill="#0d1117" stroke="#27303d" />
+  <rect x="0.5" y="0.5" width="819" height="269" rx="10" fill="#0d1117" stroke="#27303d" />
   <text x="24" y="34" class="card-title">Contribution Activity</text>
   <defs>
     <linearGradient id="areaGraddark" x1="0" y1="0" x2="0" y2="1">
@@ -11,25 +11,93 @@
       <stop offset="100%" stop-color="#b08cff" stop-opacity="0.02" />
     </linearGradient>
   </defs>
-  <line x1="46" y1="198.0" x2="796" y2="198.0" stroke="#21262d" stroke-width="1" stroke-dasharray="3,3" />
-  <text x="38" y="202.0" class="muted" text-anchor="end">0</text>
-  <line x1="46" y1="129.0" x2="796" y2="129.0" stroke="#21262d" stroke-width="1" stroke-dasharray="3,3" />
-  <text x="38" y="133.0" class="muted" text-anchor="end">414</text>
+  <line x1="46" y1="200.0" x2="796" y2="200.0" stroke="#21262d" stroke-width="1" stroke-dasharray="3,3" />
+  <text x="38" y="204.0" class="muted" text-anchor="end">0</text>
+  <line x1="46" y1="130.0" x2="796" y2="130.0" stroke="#21262d" stroke-width="1" stroke-dasharray="3,3" />
+  <text x="38" y="134.0" class="muted" text-anchor="end">414</text>
   <line x1="46" y1="60.0" x2="796" y2="60.0" stroke="#21262d" stroke-width="1" stroke-dasharray="3,3" />
   <text x="38" y="64.0" class="muted" text-anchor="end">828</text>
-  <polygon points="46,198 46.0,197.8 65.7,198.0 85.5,198.0 105.2,198.0 124.9,198.0 144.7,198.0 164.4,198.0 184.2,198.0 203.9,198.0 223.6,198.0 243.4,198.0 263.1,198.0 282.8,198.0 302.6,198.0 322.3,198.0 342.1,198.0 361.8,195.8 381.5,191.5 401.3,187.0 421.0,194.7 440.7,196.5 460.5,196.5 480.2,198.0 499.9,198.0 519.7,198.0 539.4,197.8 559.2,194.0 578.9,197.0 598.6,192.3 618.4,194.5 638.1,198.0 657.8,183.5 677.6,176.5 697.3,173.3 717.1,182.0 736.8,149.7 756.5,145.7 776.3,111.2 796.0,60.0 796,198" fill="url(#areaGraddark)" />
-  <polyline points="46.0,197.8 65.7,198.0 85.5,198.0 105.2,198.0 124.9,198.0 144.7,198.0 164.4,198.0 184.2,198.0 203.9,198.0 223.6,198.0 243.4,198.0 263.1,198.0 282.8,198.0 302.6,198.0 322.3,198.0 342.1,198.0 361.8,195.8 381.5,191.5 401.3,187.0 421.0,194.7 440.7,196.5 460.5,196.5 480.2,198.0 499.9,198.0 519.7,198.0 539.4,197.8 559.2,194.0 578.9,197.0 598.6,192.3 618.4,194.5 638.1,198.0 657.8,183.5 677.6,176.5 697.3,173.3 717.1,182.0 736.8,149.7 756.5,145.7 776.3,111.2 796.0,60.0" fill="none" stroke="#b08cff" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" />
+  <polygon points="46,200 46.0,199.8 65.7,200.0 85.5,200.0 105.2,200.0 124.9,200.0 144.7,200.0 164.4,200.0 184.2,200.0 203.9,200.0 223.6,200.0 243.4,200.0 263.1,200.0 282.8,200.0 302.6,200.0 322.3,200.0 342.1,200.0 361.8,197.8 381.5,193.4 401.3,188.8 421.0,196.6 440.7,198.5 460.5,198.5 480.2,200.0 499.9,200.0 519.7,200.0 539.4,199.8 559.2,195.9 578.9,199.0 598.6,194.3 618.4,196.4 638.1,200.0 657.8,185.3 677.6,178.2 697.3,175.0 717.1,183.8 736.8,151.0 756.5,146.9 776.3,111.9 796.0,60.0 796,200" fill="url(#areaGraddark)" />
+  <polyline points="46.0,199.8 65.7,200.0 85.5,200.0 105.2,200.0 124.9,200.0 144.7,200.0 164.4,200.0 184.2,200.0 203.9,200.0 223.6,200.0 243.4,200.0 263.1,200.0 282.8,200.0 302.6,200.0 322.3,200.0 342.1,200.0 361.8,197.8 381.5,193.4 401.3,188.8 421.0,196.6 440.7,198.5 460.5,198.5 480.2,200.0 499.9,200.0 519.7,200.0 539.4,199.8 559.2,195.9 578.9,199.0 598.6,194.3 618.4,196.4 638.1,200.0 657.8,185.3 677.6,178.2 697.3,175.0 717.1,183.8 736.8,151.0 756.5,146.9 776.3,111.9 796.0,60.0" fill="none" stroke="#b08cff" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" />
   <circle cx="796.0" cy="60.0" r="4" fill="#b08cff" />
   <circle cx="796.0" cy="60.0" r="8" fill="#b08cff" fill-opacity="0.25" />
-  <text x="46.0" y="216" class="muted" text-anchor="middle">Jul '23</text>
-  <text x="124.9" y="216" class="muted" text-anchor="middle">Nov '23</text>
-  <text x="203.9" y="216" class="muted" text-anchor="middle">Mar '24</text>
-  <text x="282.8" y="216" class="muted" text-anchor="middle">Jul '24</text>
-  <text x="361.8" y="216" class="muted" text-anchor="middle">Nov '24</text>
-  <text x="440.7" y="216" class="muted" text-anchor="middle">Mar '25</text>
-  <text x="519.7" y="216" class="muted" text-anchor="middle">Jul '25</text>
-  <text x="598.6" y="216" class="muted" text-anchor="middle">Nov '25</text>
-  <text x="677.6" y="216" class="muted" text-anchor="middle">Mar '26</text>
-  <text x="756.5" y="216" class="muted" text-anchor="middle">Jul '26</text>
+  <line x1="46.0" y1="200" x2="46.0" y2="204" stroke="#21262d" stroke-width="1" />
+  <text x="46.0" y="214" class="muted" font-size="10" text-anchor="end" transform="rotate(-45 46.0 214)">Jul '23</text>
+  <line x1="65.7" y1="200" x2="65.7" y2="204" stroke="#21262d" stroke-width="1" />
+  <text x="65.7" y="214" class="muted" font-size="10" text-anchor="end" transform="rotate(-45 65.7 214)">Aug '23</text>
+  <line x1="85.5" y1="200" x2="85.5" y2="204" stroke="#21262d" stroke-width="1" />
+  <text x="85.5" y="214" class="muted" font-size="10" text-anchor="end" transform="rotate(-45 85.5 214)">Sep '23</text>
+  <line x1="105.2" y1="200" x2="105.2" y2="204" stroke="#21262d" stroke-width="1" />
+  <text x="105.2" y="214" class="muted" font-size="10" text-anchor="end" transform="rotate(-45 105.2 214)">Oct '23</text>
+  <line x1="124.9" y1="200" x2="124.9" y2="204" stroke="#21262d" stroke-width="1" />
+  <text x="124.9" y="214" class="muted" font-size="10" text-anchor="end" transform="rotate(-45 124.9 214)">Nov '23</text>
+  <line x1="144.7" y1="200" x2="144.7" y2="204" stroke="#21262d" stroke-width="1" />
+  <text x="144.7" y="214" class="muted" font-size="10" text-anchor="end" transform="rotate(-45 144.7 214)">Dec '23</text>
+  <line x1="164.4" y1="200" x2="164.4" y2="204" stroke="#21262d" stroke-width="1" />
+  <text x="164.4" y="214" class="muted" font-size="10" text-anchor="end" transform="rotate(-45 164.4 214)">Jan '24</text>
+  <line x1="184.2" y1="200" x2="184.2" y2="204" stroke="#21262d" stroke-width="1" />
+  <text x="184.2" y="214" class="muted" font-size="10" text-anchor="end" transform="rotate(-45 184.2 214)">Feb '24</text>
+  <line x1="203.9" y1="200" x2="203.9" y2="204" stroke="#21262d" stroke-width="1" />
+  <text x="203.9" y="214" class="muted" font-size="10" text-anchor="end" transform="rotate(-45 203.9 214)">Mar '24</text>
+  <line x1="223.6" y1="200" x2="223.6" y2="204" stroke="#21262d" stroke-width="1" />
+  <text x="223.6" y="214" class="muted" font-size="10" text-anchor="end" transform="rotate(-45 223.6 214)">Apr '24</text>
+  <line x1="243.4" y1="200" x2="243.4" y2="204" stroke="#21262d" stroke-width="1" />
+  <text x="243.4" y="214" class="muted" font-size="10" text-anchor="end" transform="rotate(-45 243.4 214)">May '24</text>
+  <line x1="263.1" y1="200" x2="263.1" y2="204" stroke="#21262d" stroke-width="1" />
+  <text x="263.1" y="214" class="muted" font-size="10" text-anchor="end" transform="rotate(-45 263.1 214)">Jun '24</text>
+  <line x1="282.8" y1="200" x2="282.8" y2="204" stroke="#21262d" stroke-width="1" />
+  <text x="282.8" y="214" class="muted" font-size="10" text-anchor="end" transform="rotate(-45 282.8 214)">Jul '24</text>
+  <line x1="302.6" y1="200" x2="302.6" y2="204" stroke="#21262d" stroke-width="1" />
+  <text x="302.6" y="214" class="muted" font-size="10" text-anchor="end" transform="rotate(-45 302.6 214)">Aug '24</text>
+  <line x1="322.3" y1="200" x2="322.3" y2="204" stroke="#21262d" stroke-width="1" />
+  <text x="322.3" y="214" class="muted" font-size="10" text-anchor="end" transform="rotate(-45 322.3 214)">Sep '24</text>
+  <line x1="342.1" y1="200" x2="342.1" y2="204" stroke="#21262d" stroke-width="1" />
+  <text x="342.1" y="214" class="muted" font-size="10" text-anchor="end" transform="rotate(-45 342.1 214)">Oct '24</text>
+  <line x1="361.8" y1="200" x2="361.8" y2="204" stroke="#21262d" stroke-width="1" />
+  <text x="361.8" y="214" class="muted" font-size="10" text-anchor="end" transform="rotate(-45 361.8 214)">Nov '24</text>
+  <line x1="381.5" y1="200" x2="381.5" y2="204" stroke="#21262d" stroke-width="1" />
+  <text x="381.5" y="214" class="muted" font-size="10" text-anchor="end" transform="rotate(-45 381.5 214)">Dec '24</text>
+  <line x1="401.3" y1="200" x2="401.3" y2="204" stroke="#21262d" stroke-width="1" />
+  <text x="401.3" y="214" class="muted" font-size="10" text-anchor="end" transform="rotate(-45 401.3 214)">Jan '25</text>
+  <line x1="421.0" y1="200" x2="421.0" y2="204" stroke="#21262d" stroke-width="1" />
+  <text x="421.0" y="214" class="muted" font-size="10" text-anchor="end" transform="rotate(-45 421.0 214)">Feb '25</text>
+  <line x1="440.7" y1="200" x2="440.7" y2="204" stroke="#21262d" stroke-width="1" />
+  <text x="440.7" y="214" class="muted" font-size="10" text-anchor="end" transform="rotate(-45 440.7 214)">Mar '25</text>
+  <line x1="460.5" y1="200" x2="460.5" y2="204" stroke="#21262d" stroke-width="1" />
+  <text x="460.5" y="214" class="muted" font-size="10" text-anchor="end" transform="rotate(-45 460.5 214)">Apr '25</text>
+  <line x1="480.2" y1="200" x2="480.2" y2="204" stroke="#21262d" stroke-width="1" />
+  <text x="480.2" y="214" class="muted" font-size="10" text-anchor="end" transform="rotate(-45 480.2 214)">May '25</text>
+  <line x1="499.9" y1="200" x2="499.9" y2="204" stroke="#21262d" stroke-width="1" />
+  <text x="499.9" y="214" class="muted" font-size="10" text-anchor="end" transform="rotate(-45 499.9 214)">Jun '25</text>
+  <line x1="519.7" y1="200" x2="519.7" y2="204" stroke="#21262d" stroke-width="1" />
+  <text x="519.7" y="214" class="muted" font-size="10" text-anchor="end" transform="rotate(-45 519.7 214)">Jul '25</text>
+  <line x1="539.4" y1="200" x2="539.4" y2="204" stroke="#21262d" stroke-width="1" />
+  <text x="539.4" y="214" class="muted" font-size="10" text-anchor="end" transform="rotate(-45 539.4 214)">Aug '25</text>
+  <line x1="559.2" y1="200" x2="559.2" y2="204" stroke="#21262d" stroke-width="1" />
+  <text x="559.2" y="214" class="muted" font-size="10" text-anchor="end" transform="rotate(-45 559.2 214)">Sep '25</text>
+  <line x1="578.9" y1="200" x2="578.9" y2="204" stroke="#21262d" stroke-width="1" />
+  <text x="578.9" y="214" class="muted" font-size="10" text-anchor="end" transform="rotate(-45 578.9 214)">Oct '25</text>
+  <line x1="598.6" y1="200" x2="598.6" y2="204" stroke="#21262d" stroke-width="1" />
+  <text x="598.6" y="214" class="muted" font-size="10" text-anchor="end" transform="rotate(-45 598.6 214)">Nov '25</text>
+  <line x1="618.4" y1="200" x2="618.4" y2="204" stroke="#21262d" stroke-width="1" />
+  <text x="618.4" y="214" class="muted" font-size="10" text-anchor="end" transform="rotate(-45 618.4 214)">Dec '25</text>
+  <line x1="638.1" y1="200" x2="638.1" y2="204" stroke="#21262d" stroke-width="1" />
+  <text x="638.1" y="214" class="muted" font-size="10" text-anchor="end" transform="rotate(-45 638.1 214)">Jan '26</text>
+  <line x1="657.8" y1="200" x2="657.8" y2="204" stroke="#21262d" stroke-width="1" />
+  <text x="657.8" y="214" class="muted" font-size="10" text-anchor="end" transform="rotate(-45 657.8 214)">Feb '26</text>
+  <line x1="677.6" y1="200" x2="677.6" y2="204" stroke="#21262d" stroke-width="1" />
+  <text x="677.6" y="214" class="muted" font-size="10" text-anchor="end" transform="rotate(-45 677.6 214)">Mar '26</text>
+  <line x1="697.3" y1="200" x2="697.3" y2="204" stroke="#21262d" stroke-width="1" />
+  <text x="697.3" y="214" class="muted" font-size="10" text-anchor="end" transform="rotate(-45 697.3 214)">Apr '26</text>
+  <line x1="717.1" y1="200" x2="717.1" y2="204" stroke="#21262d" stroke-width="1" />
+  <text x="717.1" y="214" class="muted" font-size="10" text-anchor="end" transform="rotate(-45 717.1 214)">May '26</text>
+  <line x1="736.8" y1="200" x2="736.8" y2="204" stroke="#21262d" stroke-width="1" />
+  <text x="736.8" y="214" class="muted" font-size="10" text-anchor="end" transform="rotate(-45 736.8 214)">Jun '26</text>
+  <line x1="756.5" y1="200" x2="756.5" y2="204" stroke="#21262d" stroke-width="1" />
+  <text x="756.5" y="214" class="muted" font-size="10" text-anchor="end" transform="rotate(-45 756.5 214)">Jul '26</text>
+  <line x1="776.3" y1="200" x2="776.3" y2="204" stroke="#21262d" stroke-width="1" />
+  <text x="776.3" y="214" class="muted" font-size="10" text-anchor="end" transform="rotate(-45 776.3 214)">Aug '26</text>
+  <line x1="796.0" y1="200" x2="796.0" y2="204" stroke="#21262d" stroke-width="1" />
+  <text x="796.0" y="214" class="muted" font-size="10" text-anchor="end" transform="rotate(-45 796.0 214)">Sep '26</text>
   <text x="796" y="34" class="muted" text-anchor="end">Monthly contributions (2,656 since Jul 2023)</text>
 </svg>
