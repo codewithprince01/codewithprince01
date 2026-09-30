@@ -206,18 +206,6 @@ I turn ideas into reliable software — from intuitive frontend experiences and 
 
 ---
 
-## Contribution Snake
-
-<p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/codewithprince01/codewithprince01/main/output/github-contribution-grid-snake-dark.svg?v=2026.5" />
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/codewithprince01/codewithprince01/main/output/github-contribution-grid-snake.svg?v=2026.5" />
-    <img src="https://raw.githubusercontent.com/codewithprince01/codewithprince01/main/output/github-contribution-grid-snake.svg?v=2026.5" alt="Snake animation" width="100%" />
-  </picture>
-</p>
-
----
-
 ## Pacman Contribution Graph
 
 <p align="center">
