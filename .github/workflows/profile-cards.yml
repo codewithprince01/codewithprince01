@@ -2,7 +2,11 @@ name: Generate Profile Cards
 
 on:
   schedule:
-    - cron: "30 0 * * *"
+    # Every 6 hours so the total and streak pick up new contributions the same day
+    - cron: "30 */6 * * *"
+  workflow_run:
+    workflows: ["Daily Streak Keeper"]
+    types: [completed]
   push:
     branches: [main]
     paths:
