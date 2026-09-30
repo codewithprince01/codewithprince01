@@ -5,7 +5,7 @@
  * depends on a third-party rendering service that can go down.
  *
  * Usage: node scripts/generate-cards.mjs            (needs GITHUB_TOKEN, optional GH_USER)
- *        node scripts/generate-cards.mjs --mock     (renders sample data, no network)
+ *        Without a token it falls back to a public mirror of the contribution calendar.
  */
 
 import { mkdir, writeFile } from 'node:fs/promises';
@@ -15,7 +15,6 @@ import { fileURLToPath } from 'node:url';
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const OUT_DIR = resolve(ROOT, 'output');
 const USER = process.env.GH_USER || 'codewithprince01';
-const MOCK = process.argv.includes('--mock');
 
 const THEMES = {
   light: {
@@ -65,7 +64,14 @@ query($login: String!) {
   user(login: $login) {
     name
     login
-    contributionsCollection {
+    contributionsCollection { contributionYears }
+  }
+}`;
+
+const YEAR_QUERY = `
+query($login: String!, $from: DateTime!, $to: DateTime!) {
+  user(login: $login) {
+    contributionsCollection(from: $from, to: $to) {
       contributionCalendar {
         weeks { contributionDays { date contributionCount } }
       }
@@ -73,70 +79,89 @@ query($login: String!) {
   }
 }`;
 
-async function fetchProfile() {
-  let rawDays = null;
-  const token = process.env.PROFILE_TOKEN || process.env.GITHUB_TOKEN;
-  if (token) {
-    try {
-      const data = await graphql(PROFILE_QUERY, { login: USER });
-      const user = data.user;
-      rawDays = user.contributionsCollection.contributionCalendar.weeks.flatMap((w) => w.contributionDays);
-    } catch (e) {
-      console.warn('GraphQL API error, falling back to public live contributions:', e.message);
-    }
+// Every contribution day the user has ever had, straight from GitHub's GraphQL API.
+async function fetchDaysGraphQL() {
+  const { user } = await graphql(PROFILE_QUERY, { login: USER });
+  const days = [];
+  for (const year of user.contributionsCollection.contributionYears) {
+    const data = await graphql(YEAR_QUERY, {
+      login: USER,
+      from: year + '-01-01T00:00:00Z',
+      to: year + '-12-31T23:59:59Z',
+    });
+    for (const w of data.user.contributionsCollection.contributionCalendar.weeks) days.push(...w.contributionDays);
   }
-
-  if (!rawDays) {
-    try {
-      const res = await fetch(`https://github-contributions-api.jogruber.de/v4/${USER}?y=last`);
-      if (res.ok) {
-        const data = await res.json();
-        rawDays = (data.contributions || []).map((d) => ({
-          date: d.date,
-          contributionCount: d.count,
-        }));
-      }
-    } catch (e) {
-      console.warn('Public live contributions fetch error:', e.message);
-    }
-  }
-
-  const days = enrichProfileContributions(rawDays);
-  return { name: 'Prince Saini', login: USER, days };
+  return { name: user.name || user.login, days };
 }
 
-function enrichProfileContributions(realDays) {
-  const realMap = new Map((realDays || []).map((d) => [d.date, d.contributionCount]));
-  const totalReal = (realDays || []).reduce((s, d) => s + d.contributionCount, 0);
+// Fallback without a token: public mirror of the profile contribution calendar.
+async function fetchDaysPublic() {
+  const res = await fetch(`https://github-contributions-api.jogruber.de/v4/${USER}?y=all`);
+  if (!res.ok) throw new Error('Public contributions API ' + res.status);
+  const data = await res.json();
+  return { name: USER, days: data.contributions.map((d) => ({ date: d.date, contributionCount: d.count })) };
+}
 
-  // If real API already has full 1800+ contributions (e.g. if PROFILE_TOKEN or private contribs enabled), use directly
-  if (totalReal >= 1800) {
-    return realDays;
+async function fetchProfile() {
+  let result;
+  if (process.env.PROFILE_TOKEN || process.env.GITHUB_TOKEN) {
+    try {
+      result = await fetchDaysGraphQL();
+    } catch (e) {
+      console.warn('GraphQL API error, falling back to public contributions API:', e.message);
+    }
+  }
+  if (!result) result = await fetchDaysPublic();
+
+  const today = new Date().toISOString().slice(0, 10);
+  const byDate = new Map();
+  for (const d of result.days) if (d.date <= today) byDate.set(d.date, d.contributionCount);
+  const days = [...byDate].sort(([a], [b]) => a.localeCompare(b)).map(([date, contributionCount]) => ({ date, contributionCount }));
+  if (!days.length) throw new Error('No contribution data returned for ' + USER);
+
+  return { name: result.name, login: USER, days, stats: computeStats(days) };
+}
+
+function computeStats(days) {
+  const total = days.reduce((s, d) => s + d.contributionCount, 0);
+  const first = days.find((d) => d.contributionCount > 0);
+
+  let longest = { length: 0, start: null, end: null };
+  let run = { length: 0, start: null, end: null };
+  for (const d of days) {
+    if (d.contributionCount > 0) {
+      run = run.length ? { ...run, length: run.length + 1, end: d.date } : { length: 1, start: d.date, end: d.date };
+      if (run.length > longest.length) longest = run;
+    } else {
+      run = { length: 0, start: null, end: null };
+    }
   }
 
-  // Synthesize full 2026 activity matching Prince's active 126-day streak and 2,100+ contributions
-  return Array.from({ length: 365 }, (_, i) => {
-    const d = new Date(Date.now() - (364 - i) * 86400000);
-    const dateStr = d.toISOString().slice(0, 10);
-    const realCount = realMap.get(dateStr) || 0;
-    const daysAgo = 364 - i;
-    const isStreak = daysAgo <= 126;
+  // The current streak survives a still-empty today; it only breaks after a full day without contributions.
+  let i = days.length - 1;
+  if (days[i].contributionCount === 0) i--;
+  let current = { length: 0, start: null, end: null };
+  for (let j = i; j >= 0 && days[j].contributionCount > 0; j--) {
+    current = { length: current.length + 1, start: days[j].date, end: days[i].date };
+  }
 
-    let targetCount = realCount;
-    if (isStreak) {
-      // 126-day active streak: every day has active contributions
-      const base = 6 + Math.round(4 * Math.sin(i / 3.2) + ((i * 7) % 5));
-      const extra = daysAgo <= 14 ? 6 : 0;
-      targetCount = Math.max(realCount, base + extra);
-    } else {
-      // Steady activity throughout the rest of the year
-      const base = Math.max(0, Math.round(4 + 3 * Math.sin(i / 5) + ((i * 3) % 4)));
-      const hasRestDay = (i % 7 === 0 || i % 6 === 0) && realCount === 0;
-      targetCount = hasRestDay ? 0 : Math.max(realCount, base);
-    }
+  return { total, firstDate: first ? first.date : days[0].date, current, longest };
+}
 
-    return { date: dateStr, contributionCount: targetCount };
+const fmtDate = (iso, withYear = false) =>
+  new Date(iso + 'T00:00:00Z').toLocaleString('en-US', {
+    month: 'short',
+    day: 'numeric',
+    ...(withYear ? { year: 'numeric' } : {}),
+    timeZone: 'UTC',
   });
+
+function fmtRange({ start, end }) {
+  if (!start) return 'No active streak';
+  const sameYear = start.slice(0, 4) === end.slice(0, 4);
+  const thisYear = end.slice(0, 4) === new Date().toISOString().slice(0, 4);
+  if (start === end) return fmtDate(start, !thisYear);
+  return fmtDate(start, !sameYear || !thisYear) + ' - ' + fmtDate(end, !sameYear || !thisYear);
 }
 
 /* ---------------------------------------------------------------- rendering */
@@ -164,10 +189,11 @@ function activityCard(p, theme) {
   const topY = 60;
   const bottomY = height - 42;
 
-  // Real live weekly contribution data directly from GitHub
+  // Last 52 weeks of real contributions, bucketed so the final bucket ends today
+  const recent = p.days.slice(-364);
   const weeks = [];
-  for (let i = 0; i < p.days.length; i += 7) {
-    const slice = p.days.slice(i, i + 7);
+  for (let i = 0; i < recent.length; i += 7) {
+    const slice = recent.slice(i, i + 7);
     if (!slice.length) continue;
     const rawCount = slice.reduce((s, d) => s + d.contributionCount, 0);
     weeks.push({ date: slice[0].date, count: rawCount });
@@ -216,7 +242,7 @@ function activityCard(p, theme) {
   <circle cx="${x(peakIdx).toFixed(1)}" cy="${y(weeks[peakIdx].count).toFixed(1)}" r="8" fill="${theme.accent}" fill-opacity="0.25" />`;
 
   const totalPeriodContribs = weeks.reduce((s, w) => s + w.count, 0);
-  const stamp = `  <text x="${right}" y="34" class="muted" text-anchor="end">Weekly live contributions (${totalPeriodContribs.toLocaleString()}+ in 2026)</text>`;
+  const stamp = `  <text x="${right}" y="34" class="muted" text-anchor="end">Weekly contributions (${totalPeriodContribs.toLocaleString('en-US')} in the last year)</text>`;
 
   return frame({
     width,
@@ -240,11 +266,13 @@ function streakCard(p, theme) {
   const currStreakLabel = isDark ? '#c9d1d9' : '#333333';
   const dates = isDark ? '#8b949e' : '#6b7280';
 
-  const total2026Formatted = '2,100+';
-  const cur = 126;
-  const max = 126;
-  const curDateStr = 'May 14 - Sep 17';
-  const longestRange = 'May 14 - Sep 17';
+  const { total, firstDate, current, longest } = p.stats;
+  const totalFormatted = total.toLocaleString('en-US');
+  const totalRange = fmtDate(firstDate, true) + ' - Present';
+  const cur = current.length;
+  const max = longest.length;
+  const curDateStr = fmtRange(current);
+  const longestRange = fmtRange(longest);
 
   return `<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'
                 style='isolation: isolate' viewBox='0 0 495 195' width='495px' height='195px' direction='ltr'>
@@ -280,7 +308,7 @@ function streakCard(p, theme) {
                 <!-- Total Contributions big number (2026) -->
                 <g transform='translate(82.5, 48)'>
                     <text x='0' y='32' stroke-width='0' text-anchor='middle' fill='${sideNums}' stroke='none' font-family='"Segoe UI", Ubuntu, sans-serif' font-weight='700' font-size='28px' font-style='normal' style='opacity: 0; animation: fadein 0.5s linear forwards 0.6s'>
-                        ${total2026Formatted}
+                        ${totalFormatted}
                     </text>
                 </g>
 
@@ -294,7 +322,7 @@ function streakCard(p, theme) {
                 <!-- Total Contributions range -->
                 <g transform='translate(82.5, 114)'>
                     <text x='0' y='32' stroke-width='0' text-anchor='middle' fill='${dates}' stroke='none' font-family='"Segoe UI", Ubuntu, sans-serif' font-weight='400' font-size='12px' font-style='normal' style='opacity: 0; animation: fadein 0.5s linear forwards 0.8s'>
-                        2026 - Present
+                        ${totalRange}
                     </text>
                 </g>
             </g>
@@ -326,7 +354,7 @@ function streakCard(p, theme) {
                 <!-- Current Streak big number -->
                 <g transform='translate(247.5, 48)'>
                     <text x='0' y='32' stroke-width='0' text-anchor='middle' fill='${currStreakNum}' stroke='none' font-family='"Segoe UI", Ubuntu, sans-serif' font-weight='700' font-size='28px' font-style='normal' style='animation: currstreak 0.6s linear forwards'>
-                        ${cur || 1}
+                        ${cur}
                     </text>
                 </g>
 
@@ -335,7 +363,7 @@ function streakCard(p, theme) {
                 <!-- Longest Streak big number -->
                 <g transform='translate(412.5, 48)'>
                     <text x='0' y='32' stroke-width='0' text-anchor='middle' fill='${sideNums}' stroke='none' font-family='"Segoe UI", Ubuntu, sans-serif' font-weight='700' font-size='28px' font-style='normal' style='opacity: 0; animation: fadein 0.5s linear forwards 1.2s'>
-                        ${max || 12}
+                        ${max}
                     </text>
                 </g>
 
@@ -359,7 +387,7 @@ function streakCard(p, theme) {
 
 /* -------------------------------------------------------------------- main */
 
-const profile = MOCK ? mockProfile() : await fetchProfile();
+const profile = await fetchProfile();
 
 await mkdir(OUT_DIR, { recursive: true });
 const written = [];

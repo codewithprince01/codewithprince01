@@ -36,9 +36,13 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PROFILE_TOKEN: ${{ secrets.PROFILE_TOKEN }}
           GH_USER: ${{ github.repository_owner }}
-        run: |
-          node scripts/generate-cards.mjs
-          node scripts/update-3d-contrib.mjs
+        run: node scripts/generate-cards.mjs
+
+      - name: Generate 3D contribution graph
+        uses: yoshi389111/github-profile-3d-contrib@v0.9.3
+        env:
+          GITHUB_TOKEN: ${{ secrets.PROFILE_TOKEN || secrets.GITHUB_TOKEN }}
+          USERNAME: ${{ github.repository_owner }}
 
       - name: Push generated files
         run: |
