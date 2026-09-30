@@ -183,11 +183,11 @@ ${body}
 
 function activityCard(p, theme) {
   const width = 820;
-  const height = 240;
+  const height = 270;
   const left = 46;
   const right = width - 24;
   const topY = 60;
-  const bottomY = height - 42;
+  const bottomY = height - 70;
 
   // Every month since the first contribution, so this chart and the streak card share one all-time total
   const firstMonth = p.stats.firstDate.slice(0, 7);
@@ -223,14 +223,15 @@ function activityCard(p, theme) {
     })
     .join('\n');
 
-  // Label every few months so the whole history stays readable
-  const every = Math.max(1, Math.ceil(weeks.length / 12));
+  // One label per month, tilted so every month fits without overlapping
   const monthTicks = weeks
     .map((w, i) => {
-      if (i % every !== 0) return null;
       const d = new Date(w.date + 'T00:00:00Z');
       const label = d.toLocaleString('en-US', { month: 'short', timeZone: 'UTC' }) + " '" + String(d.getUTCFullYear()).slice(2);
-      return `  <text x="${x(i).toFixed(1)}" y="${bottomY + 18}" class="muted" text-anchor="middle">${label}</text>`;
+      const tx = x(i).toFixed(1);
+      const ty = bottomY + 14;
+      return `  <line x1="${tx}" y1="${bottomY}" x2="${tx}" y2="${bottomY + 4}" stroke="${theme.grid}" stroke-width="1" />
+  <text x="${tx}" y="${ty}" class="muted" font-size="10" text-anchor="end" transform="rotate(-45 ${tx} ${ty})">${label}</text>`;
     })
     .filter(Boolean)
     .join('\n');
