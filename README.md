@@ -218,6 +218,18 @@ I turn ideas into reliable software — from intuitive frontend experiences and 
 
 ---
 
+## Pacman Contribution Graph
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/codewithprince01/codewithprince01/output/pacman-contribution-graph-dark.svg?v=1">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/codewithprince01/codewithprince01/output/pacman-contribution-graph.svg?v=1">
+    <img alt="pacman contribution graph" src="https://raw.githubusercontent.com/codewithprince01/codewithprince01/output/pacman-contribution-graph.svg?v=1" width="100%">
+  </picture>
+</p>
+
+---
+
 ## 3D Contribution Graph
 
 <p align="center">
