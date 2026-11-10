@@ -17,8 +17,8 @@
   <text x="38" y="133.0" class="muted" text-anchor="end">574</text>
   <line x1="46" y1="60.0" x2="796" y2="60.0" stroke="#e3e6ea" stroke-width="1" stroke-dasharray="3,3" />
   <text x="38" y="64.0" class="muted" text-anchor="end">1148</text>
-  <polygon points="46,198 46.0,195.5 114.2,198.0 182.4,187.5 250.5,182.5 318.7,180.2 386.9,186.5 455.1,163.1 523.3,160.3 591.5,135.4 659.6,97.1 727.8,60.0 796.0,185.4 796,198" fill="url(#areaGrad)" />
-  <polyline points="46.0,195.5 114.2,198.0 182.4,187.5 250.5,182.5 318.7,180.2 386.9,186.5 455.1,163.1 523.3,160.3 591.5,135.4 659.6,97.1 727.8,60.0 796.0,185.4" fill="none" stroke="#764ba2" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" />
+  <polygon points="46,198 46.0,195.5 114.2,198.0 182.4,187.5 250.5,182.5 318.7,180.2 386.9,186.5 455.1,163.1 523.3,160.3 591.5,135.4 659.6,97.1 727.8,60.0 796.0,185.3 796,198" fill="url(#areaGrad)" />
+  <polyline points="46.0,195.5 114.2,198.0 182.4,187.5 250.5,182.5 318.7,180.2 386.9,186.5 455.1,163.1 523.3,160.3 591.5,135.4 659.6,97.1 727.8,60.0 796.0,185.3" fill="none" stroke="#764ba2" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" />
   <circle cx="727.8" cy="60.0" r="4" fill="#764ba2" />
   <circle cx="727.8" cy="60.0" r="8" fill="#764ba2" fill-opacity="0.25" />
   <text x="46.0" y="216" class="muted" text-anchor="middle">Dec</text>
@@ -33,5 +33,5 @@
   <text x="659.6" y="216" class="muted" text-anchor="middle">Sep</text>
   <text x="727.8" y="216" class="muted" text-anchor="middle">Oct</text>
   <text x="796.0" y="216" class="muted" text-anchor="middle">Nov</text>
-  <text x="796" y="34" class="muted" text-anchor="end">Monthly contributions (3,698 in the last 12 months)</text>
+  <text x="796" y="34" class="muted" text-anchor="end">Monthly contributions (3,699 in the last 12 months)</text>
 </svg>
